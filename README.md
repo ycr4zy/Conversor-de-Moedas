@@ -1,6 +1,38 @@
-# Conversor-de-Moedas
-Conversor de Moedas feito com Python (Tkinker)
+# Conversor de Moedas
 
+Conversor de moedas feito em Python utilizando Tkinter (interface gráfica simples).
+
+## Funcionalidades
+
+- Conversão entre as moedas mais comuns (USD, BRL, EUR, GBP, JPY, entre outras)
+- Troca rápida das moedas de origem e destino
+- Histórico das últimas 5 conversões realizadas
+- Modo escuro e modo claro
+
+## Como usar
+
+1. **Requisitos:**  
+   - Python 3 instalado  
+   - Tkinter (normalmente já incluso no Python padrão)
+
+2. **Execução:**  
+   Basta rodar o script Python principal:
+
+   ```
+   python conversor_moedas.py
+   ```
+
+3. **Passos no programa:**  
+   - Escolha a moeda de origem e destino.
+   - Digite o valor a ser convertido.
+   - Clique em "Converter".
+   - Use "Inverter moedas" para trocar origem/destino rapidamente.
+   - Visualize as últimas conversões no histórico.
+   - Alterne entre modo escuro e claro conforme desejar.
+
+## Código-fonte principal
+
+```python
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
@@ -9,7 +41,6 @@ from tkinter import ttk
 moedas = [
     "USD", "BRL", "EUR", "GBP", "JPY", "ARS", "CAD", "AUD", "CHF", "CNY", "INR", "MXN", "RUB", "ZAR", "TRY", "KRW"
 ]
-
 
 taxas = {
     ("USD", "BRL"): 5.2, ("BRL", "USD"): 0.19,
@@ -27,7 +58,6 @@ taxas = {
     ("USD", "ZAR"): 18.0, ("ZAR", "USD"): 0.055,
     ("USD", "TRY"): 32.0, ("TRY", "USD"): 0.031,
     ("USD", "KRW"): 1320.0, ("KRW", "USD"): 0.00076,
-    
 }
 
 janela = tk.Tk()
@@ -120,5 +150,13 @@ def ativar_modo_claro():
 botao_claro = tk.Button(janela, text="Modo Claro", command=ativar_modo_claro)
 botao_claro.pack(pady=10)
 
-
 janela.mainloop()
+```
+
+## Observações
+
+- As taxas de câmbio estão fixas no código. Para valores atualizados, é preciso integrar com uma API de câmbio.
+- O projeto é didático, ideal para estudos sobre Python e Tkinter.
+
+---
+Desenvolvido por [ycr4zy](https://github.com/ycr4zy)
